@@ -1,6 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
+import { GeneralContext } from "../Contexts/GeneralContent";
 
-function ProductCreateForm({ addProduct }) {
+function ProductCreateForm() {
+  const { addProduct } = useContext(GeneralContext);
   // const [productName, setProductName] = useState("");
   // const [productPrice, setProductPrice] = useState("");
   const nameRef = useRef("");

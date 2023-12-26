@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { GeneralContext } from "../Contexts/GeneralContent";
 
-function CheckOutForm({ products, addRecord }) {
+function CheckOutForm() {
+  const { products, addRecord } = useContext(GeneralContext);
   const idRef = useRef("");
   const quantityRef = useRef("");
   const handleBuyBtn = () => {

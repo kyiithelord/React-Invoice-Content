@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import EmptyStage from "./EmptyStage";
 import Record from "./Record";
+import { GeneralContext } from "../Contexts/GeneralContent";
 
-function RecordGroup({ records, removeRecord }) {
+function RecordGroup() {
+  const { records } = useContext(GeneralContext);
   return (
     <>
       {records.length === 0 && <EmptyStage />}
       {records.map((record, index) => (
-        <Record
-          removeRecord={removeRecord}
-          key={record.id}
-          index={index}
-          record={record}
-        />
+        <Record key={record.id} index={index} record={record} />
       ))}
     </>
   );
